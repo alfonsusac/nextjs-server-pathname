@@ -5,7 +5,7 @@ import { Suspense } from "react";
 export default function BlogPage() {
   console.log("Hello?")
   return (
-    <div className="flex flex-col items-start gap-1">
+    <div>
       <h1 className="text-3xl font-semibold tracking-tight">Blogs</h1>
       <div className="flex gap-2 flex-wrap">
         <Suspense fallback={"Loading..."}>

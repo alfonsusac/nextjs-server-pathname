@@ -2,6 +2,7 @@ import { getBlog, getBlogs } from "@/app/blog/data";
 import Link from "next/link";
 import { Suspense } from "react";
 
+// To disable SSG, remove generateStaticParams
 export async function generateStaticParams() {
   const paths: {
     slug: string[]

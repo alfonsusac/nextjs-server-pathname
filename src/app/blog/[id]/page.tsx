@@ -1,5 +1,7 @@
+import Link from "next/link";
 import { getBlog, getBlogs } from "../data";
 
+// To disable SSG, remove generateStaticParams
 export async function generateStaticParams() {
   const paths: {
     id: string
@@ -29,6 +31,11 @@ export default async function MerchItemPage(props: {
       <h1 className="text-3xl font-semibold tracking-tight leading-none">{article.title}</h1>
       <div>by {article.author}</div>
       <div>{article.content}</div>
+
+      <div className="flex gap-2">
+        <Link href={`/blog/${ Number(params.id) - 1 }`}>Prev</Link>
+        <Link href={`/blog/${ Number(params.id) + 1 }`}>Next</Link>
+      </div>
     </div>
   );
 }
